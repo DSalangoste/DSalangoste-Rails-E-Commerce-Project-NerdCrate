@@ -14,6 +14,7 @@ gem "bootsnap", require: false
 # Authentication & Admin
 gem 'devise', '~> 4.9'
 gem 'activeadmin', '~> 3.3.0'
+gem 'sass-rails', '~> 6.0'
 gem 'sassc-rails'
 gem 'formtastic', '~> 5.0'
 gem 'inherited_resources'

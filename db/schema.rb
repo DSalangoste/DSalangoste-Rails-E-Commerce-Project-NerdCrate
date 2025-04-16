@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_04_16_194633) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_16_203204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,22 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_16_194633) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "crate_type_id", null: false
+    t.string "status"
+    t.decimal "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "shipping_address"
+    t.string "payment_status"
+    t.string "tracking_number"
+    t.string "email"
+    t.string "phone"
+    t.index ["crate_type_id"], name: "index_orders_on_crate_type_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -57,4 +73,18 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_16_194633) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "orders", "crate_types"
+  add_foreign_key "orders", "users"
 end

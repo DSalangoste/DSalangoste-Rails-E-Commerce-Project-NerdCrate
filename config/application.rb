@@ -14,7 +14,11 @@ module Nerdcrate
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
+<<<<<<< HEAD
     config.autoload_lib(ignore: %w[assets tasks])
+=======
+    config.autoload_lib(ignore: %w(assets tasks))
+>>>>>>> 6b2b14f7e48e3d65002eebbb44075d76a6fc0752
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -24,4 +28,8 @@ module Nerdcrate
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
+<<<<<<< HEAD
 end
+=======
+end 
+>>>>>>> 6b2b14f7e48e3d65002eebbb44075d76a6fc0752

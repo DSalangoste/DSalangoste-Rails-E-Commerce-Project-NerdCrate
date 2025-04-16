@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -19,11 +20,23 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+=======
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: 127.0.0.1
+  username: postgres
+  password: admin
+  port: 5432
+  sslmode: disable
+>>>>>>> 6b2b14f7e48e3d65002eebbb44075d76a6fc0752
 
 development:
   <<: *default
   database: nerdcrate_development
 
+<<<<<<< HEAD
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
@@ -54,10 +67,13 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+=======
+>>>>>>> 6b2b14f7e48e3d65002eebbb44075d76a6fc0752
 test:
   <<: *default
   database: nerdcrate_test
 
+<<<<<<< HEAD
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -96,3 +112,10 @@ production:
     <<: *primary_production
     database: nerdcrate_production_cable
     migrations_paths: db/cable_migrate
+=======
+production:
+  <<: *default
+  database: nerdcrate_production
+  username: postgres
+  password: <%= ENV['NERDCRATE_DATABASE_PASSWORD'] %> 
+>>>>>>> 6b2b14f7e48e3d65002eebbb44075d76a6fc0752

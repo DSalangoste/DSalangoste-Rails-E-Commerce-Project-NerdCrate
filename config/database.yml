@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: 127.0.0.1
+  username: postgres
+  password: admin
+  port: 5432
+  sslmode: disable
+
+development:
+  <<: *default
+  database: nerdcrate_development
+
+test:
+  <<: *default
+  database: nerdcrate_test
+
+production:
+  <<: *default
+  database: nerdcrate_production
+  username: postgres
+  password: <%= ENV['NERDCRATE_DATABASE_PASSWORD'] %> 

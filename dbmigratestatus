@@ -1,0 +1,3 @@
+[33mf8a67e1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Add user and order models with Devise integration and database migrations
+[33m49795a5[m Add ActiveAdmin setup with CrateType and Product models
+[33mf6fee74[m Initial commit

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to NerdCrate</title>
+</head>
+<body>
+  <div class="container">
+    <header class="text-center my-5">
+      <h1>Welcome to NerdCrate</h1>
+      <p class="lead">Your Monthly Box of Nerdy Treasures</p>
+    </header>
+
+    <section class="features my-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Monthly Surprises</h3>
+          <p>Get a curated box of exclusive collectibles, gear, and merchandise every month.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Exclusive Items</h3>
+          <p>Receive limited edition items you won't find anywhere else.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Nerd Community</h3>
+          <p>Join a community of like-minded fans and collectors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta text-center my-5">
+      <h2>Start Your Nerd Journey Today!</h2>
+      <% if user_signed_in? %>
+        <%= link_to 'View Products', products_path, class: 'btn btn-primary btn-lg' %>
+      <% else %>
+        <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+        <%= link_to 'Learn More', '#', class: 'btn btn-outline-primary btn-lg ml-3' %>
+      <% end %>
+    </section>
+  </div>
+</body>
+</html> 

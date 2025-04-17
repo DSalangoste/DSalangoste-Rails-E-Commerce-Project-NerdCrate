@@ -21,7 +21,13 @@ module Nerdcrate
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    config.time_zone = "UTC"
+    config.eager_load_paths << Rails.root.join("lib")
+
+    # Add this line for ActiveAdmin
+    config.assets.precompile += %w( active_admin.css active_admin.js )
+
+    config.assets.enabled = true
+    config.assets.version = '1.0'
   end
-end 
+end

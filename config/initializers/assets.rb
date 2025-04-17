@@ -6,5 +6,5 @@ Rails.application.config.assets.version = "1.0"
 # Add additional assets to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join("node_modules")
 
-# Add ActiveAdmin assets to precompile list
-Rails.application.config.assets.precompile += %w( active_admin.css active_admin.js ) 
+# Precompile additional assets.
+Rails.application.config.assets.precompile += %w( active_admin.css active_admin.js )

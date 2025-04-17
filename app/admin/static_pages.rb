@@ -22,4 +22,4 @@ ActiveAdmin.register_page "Static Pages" do
   end
 
   page_action :update, method: :post
-end 
+end

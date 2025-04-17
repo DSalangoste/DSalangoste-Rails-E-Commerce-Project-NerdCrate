@@ -2,17 +2,28 @@ class OrderedCrate < ApplicationRecord
   belongs_to :order
   belongs_to :crate_type
 
+  validates :status, presence: true
   validates :order, presence: true
   validates :crate_type, presence: true
-  validates :status, presence: true
 
-  # ... your existing associations and validations ...
+  # Store customization_options as JSON
+  store_accessor :customization_options
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["crate_type_id", "created_at", "customization_options", "id", "id_value", "order_id", "status", "updated_at"]
-  end
+  # Define possible statuses
+  enum status: {
+    pending: 'pending',
+    processing: 'processing',
+    shipped: 'shipped',
+    delivered: 'delivered',
+    cancelled: 'cancelled'
+  }
 
-  def self.ransackable_associations(auth_object = nil)
-    ["order", "crate_type"]
+  # Callbacks
+  before_validation :set_default_status, on: :create
+
+  private
+
+  def set_default_status
+    self.status ||= :pending
   end
 end 

@@ -1,9 +1,13 @@
 class PagesController < ApplicationController
   def about
-    @page = Page.find_by(slug: 'about')
   end
 
   def contact
-    @page = Page.find_by(slug: 'contact')
   end
-end 
+
+  private
+
+  def render_404
+    render file: Rails.root.join('public', '404.html'), status: :not_found, layout: false
+  end
+end

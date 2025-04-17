@@ -34,6 +34,14 @@ class Order < ApplicationRecord
     ordered_crates.count
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["crate_type", "ordered_crates", "user"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "id", "status", "total_price", "updated_at"]
+  end
+
   private
 
   def set_default_status

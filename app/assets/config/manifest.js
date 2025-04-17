@@ -1,5 +1,8 @@
 //= link_tree ../images
-//= link_directory ../javascripts .js
-//= link_directory ../stylesheets .css
+//= link_tree ../builds
 //= link activeadmin.css
-//= link activeadmin.js 
+//= link activeadmin.js
+//= link application.css
+//= link application.js
+//= link controllers/application.js
+//= link_tree ../../../app/javascript/controllers .js 

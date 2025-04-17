@@ -10,6 +10,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem 'image_processing', '~> 1.2'
 
 # Authentication & Admin
 gem 'devise', '~> 4.9'
